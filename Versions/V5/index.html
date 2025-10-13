@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlética</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">A</div>
+                <div class="logo-text">Athlética</div>
+            </div>
+            <p>Prise de Masse 2026 • Programme Professionnel</p>
+        </div>
+
+        <div class="nav">
+            <button class="nav-btn active" onclick="showSection('sport')">🏋️ Sport</button>
+            <button class="nav-btn" onclick="showSection('nutrition')">🍎 Nutrition</button>
+            <button class="nav-btn" onclick="showSection('stats')">📊 Stats</button>
+            <button class="nav-btn" onclick="showSection('history')">📅 Historique</button>
+        </div>
+
+        <!-- Section Sport -->
+        <div id="sport" class="section active">
+            <div class="card">
+                <h3>Séance du jour</h3>
+                <div class="day-selector" id="daySelector"></div>
+            </div>
+
+            <div class="swipe-container" id="swipeContainer">
+                <div class="card no-data" id="noExercise">
+                    <p>Sélectionnez un jour d'entraînement</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 100px;">
+                <h3>💧 Hydratation</h3>
+                <div class="water-counter">
+                    <p>Verres d'eau aujourd'hui</p>
+                    <div class="water-count" id="waterCount">0</div>
+                    <p style="color: var(--text-secondary);">Objectif: 8-10 verres/jour</p>
+                    <div class="water-buttons">
+                        <button class="water-btn btn-remove" onclick="changeWater(-1)">-</button>
+                        <button class="water-btn btn-add" onclick="changeWater(1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Nutrition -->
+        <div id="nutrition" class="section">
+            <div class="card">
+                <h3>🍽️ Plan Alimentaire</h3>
+                <div class="meal-item">
+                    <div class="meal-name">Petit-déjeuner</div>
+                    <div class="meal-details">Porridge (60g flocons d'avoine) + 2 œufs + 1 banane<br>~30g protéines, 600 kcal</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-name">Collation Matin</div>
+                    <div class="meal-details">Yaourt nature + fruits secs/noix ou smoothie<br>~15-20g protéines</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-name">Déjeuner</div>
+                    <div class="meal-details">150-200g poulet/thon + 150g riz complet + légumes verts<br>~40-50g protéines</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-name">Goûter</div>
+                    <div class="meal-details">Sandwich jambon-fromage complet ou 2 œufs + pain + fruit<br>~20g protéines</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-name">Dîner</div>
+                    <div class="meal-details">150-200g poisson/viande + pommes de terre/pâtes + légumes<br>~30-40g protéines</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-name">Collation Soir</div>
+                    <div class="meal-details">150g fromage blanc 0% ou shake protéiné<br>~15g protéines</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>✅ Repas pris aujourd'hui</h3>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal1" onchange="saveMeals()">
+                    <label for="meal1">Petit-déjeuner</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal2" onchange="saveMeals()">
+                    <label for="meal2">Collation Matin</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal3" onchange="saveMeals()">
+                    <label for="meal3">Déjeuner</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal4" onchange="saveMeals()">
+                    <label for="meal4">Goûter</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal5" onchange="saveMeals()">
+                    <label for="meal5">Dîner</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meal6" onchange="saveMeals()">
+                    <label for="meal6">Collation Soir</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📊 Objectifs Nutritionnels</h3>
+                <p><strong>Calories:</strong> 2500-2700 kcal/jour</p>
+                <p><strong>Protéines:</strong> 115-160g/jour (1.6-2.2g/kg)</p>
+                <p><strong>Glucides:</strong> Féculents à chaque repas</p>
+                <p><strong>Lipides:</strong> 25-30% des calories</p>
+            </div>
+        </div>
+
+        <!-- Section Stats -->
+        <div id="stats" class="section">
+            <div class="stat-card">
+                <div class="stat-label">Séances complétées</div>
+                <div class="stat-number" id="totalWorkouts">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Exercices réalisés</div>
+                <div class="stat-number" id="totalExercises">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Verres d'eau (moyenne/jour)</div>
+                <div class="stat-number" id="avgWater">0</div>
+            </div>
+
+            <div class="card">
+                <h3>🎯 Progression</h3>
+                <p style="margin-bottom: 10px;"><strong>Objectif:</strong> Prise de masse pour l'été 2026</p>
+                <p style="margin-bottom: 10px;"><strong>Rythme:</strong> 3 séances musculation + 2 courses/semaine</p>
+                <p><strong>Progression attendue:</strong> 2-3kg de muscle en 6 mois</p>
+            </div>
+        </div>
+
+        <!-- Section Historique -->
+        <div id="history" class="section">
+            <div class="card">
+                <h3>📅 Historique des séances</h3>
+                <div id="historyList"></div>
+            </div>
+
+            <button class="btn-primary" onclick="exportData()">📥 Exporter les données</button>
+            <button class="btn-primary" onclick="clearData()" style="background: var(--accent);">🗑️ Réinitialiser</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
