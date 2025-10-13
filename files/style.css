@@ -1,15 +1,15 @@
 :root {
-    --primary: #1a1f36;
-    --secondary: #2d3748;
-    --accent: #e53e3e;
-    --accent-light: #fc8181;
-    --success: #38a169;
-    --warning: #d69e2e;
-    --text: #f7fafc;
-    --text-secondary: #a0aec0;
-    --card-bg: rgba(45, 55, 72, 0.8);
-    --gradient: linear-gradient(135deg, #e53e3e 0%, #2d3748 100%);
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --primary: #000000;
+    --secondary: #1a1a1a;
+    --accent: #ffffff;
+    --accent-light: #cccccc;
+    --success: #666666;
+    --warning: #888888;
+    --text: #ffffff;
+    --text-secondary: #999999;
+    --card-bg: rgba(26, 26, 26, 0.9);
+    --gradient: linear-gradient(135deg, #ffffff 0%, #666666 100%);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -25,9 +25,9 @@ body {
     min-height: 100vh;
     padding-bottom: 0;
     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(229, 62, 62, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 85% 30%, rgba(45, 55, 72, 0.15) 0%, transparent 20%),
-        radial-gradient(circle at 50% 80%, rgba(56, 161, 105, 0.1) 0%, transparent 20%);
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 85% 30%, rgba(26, 26, 26, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(102, 102, 102, 0.05) 0%, transparent 20%);
 }
 
 .container {
@@ -69,12 +69,13 @@ body {
     font-size: 24px;
     margin-right: 15px;
     box-shadow: var(--shadow);
+    color: #000000;
 }
 
 .logo-text {
     font-size: 28px;
     font-weight: 800;
-    background: linear-gradient(to right, #e53e3e, #fc8181);
+    background: linear-gradient(to right, #ffffff, #cccccc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -95,7 +96,7 @@ body {
     border-radius: 15px 15px 0 0;
     margin: 0;
     overflow: hidden;
-    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: none;
@@ -126,6 +127,7 @@ body {
 .nav-bottom .nav-btn.active {
     color: var(--text);
     background: var(--gradient);
+    color: #000000;
 }
 
 .nav-bottom .nav-btn:not(.active):hover {
@@ -236,7 +238,8 @@ body {
     justify-content: center;
     font-size: 80px;
     margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    color: #000000;
 }
 
 .exercise-name {
@@ -282,7 +285,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-size: 16px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     color: var(--text);
     transition: all 0.3s;
 }
@@ -290,7 +293,7 @@ body {
 .series-input input:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .swipe-buttons {
@@ -345,20 +348,20 @@ body {
 
 .swipe-feedback.left {
     left: 20px;
-    background: rgba(229, 62, 62, 0.8);
+    background: rgba(102, 102, 102, 0.8);
     color: white;
 }
 
 .swipe-feedback.right {
     right: 20px;
-    background: rgba(56, 161, 105, 0.8);
+    background: rgba(153, 153, 153, 0.8);
     color: white;
 }
 
 .rest-timer {
     text-align: center;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     margin: 20px 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -387,7 +390,7 @@ body {
     font-weight: bold;
     color: var(--accent);
     margin: 20px 0;
-    text-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+    text-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .water-buttons {
@@ -418,7 +421,7 @@ body {
 }
 
 .btn-remove {
-    background: var(--accent);
+    background: #333333;
     color: white;
 }
 
@@ -479,7 +482,7 @@ body {
 
 .stat-card {
     background: var(--gradient);
-    color: white;
+    color: #000000;
     padding: 25px;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -517,7 +520,7 @@ body {
     padding: 15px;
     border-left: 4px solid var(--accent);
     margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: transform 0.3s;
 }
@@ -541,7 +544,7 @@ body {
     width: 100%;
     padding: 18px;
     background: var(--gradient);
-    color: white;
+    color: #000000;
     border: none;
     border-radius: 15px;
     font-size: 16px;
@@ -595,12 +598,12 @@ body {
 
 .day-btn.active {
     background: var(--accent);
-    color: var(--text);
-    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+    color: #000000;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .day-btn:hover:not(.active) {
-    background: rgba(229, 62, 62, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .no-data {
@@ -622,7 +625,7 @@ body {
     font-weight: 800;
     color: var(--accent);
     margin: 20px 0;
-    text-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+    text-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .timer-label {
@@ -661,7 +664,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-size: 16px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     color: var(--text);
     transition: all 0.3s;
 }
@@ -669,7 +672,7 @@ body {
 .series-inputs input:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .cardio-inputs {
@@ -697,7 +700,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-size: 16px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     color: var(--text);
     transition: all 0.3s;
 }
@@ -705,7 +708,7 @@ body {
 .cardio-input input:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .badminton-card {
@@ -780,12 +783,12 @@ body {
 
 .date-btn.active {
     background: var(--accent);
-    color: var(--text);
-    box-shadow: 0 3px 10px rgba(229, 62, 62, 0.3);
+    color: #000000;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
 }
 
 .date-btn:hover:not(.active) {
-    background: rgba(229, 62, 62, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .chart-container {
@@ -875,7 +878,7 @@ body {
 }
 
 .stat-item {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 10px;
     text-align: center;
