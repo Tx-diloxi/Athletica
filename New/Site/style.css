@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F99898;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+}
+
+header > div:first-child {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+header > div:first-child p:first-child {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "";
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-right: 10px;
+}
+
+header > div:first-child p:last-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+header > img:last-child {
+    padding-right: 20px;
+}
+
+main {
+    grid-area: main;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+main > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+}
+
+main > div > p{
+    position: absolute;
+    bottom: 75px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.);
+}
+
+main > div > p:last-child {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding: 20px;
+}
+
+footer > div {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    justify-content: space-around;
+}
+
+footer > div > div {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+footer > div > div:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}

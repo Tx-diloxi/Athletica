@@ -1,0 +1,157 @@
+# Prompt Optimisé - Application Athlética
+
+## 🎯 CONTEXTE ET OBJECTIF
+Crée une application web de fitness complète "Athlética" avec une interface inspirée de Tinder pour la gestion des exercices, permettant aux utilisateurs de suivre leurs entraînements, nutrition et progression.
+
+## 🎨 DESIGN & EXPÉRIENCE UTILISATEUR
+
+### **Style Visuel**
+- **Palette** : Noir, blanc, dégradés de gris avec accents blancs
+- **Inspiration** : Interface Tinder-like pour la section sport
+- **Effets** : Glassmorphism (cartes en verre), ombres portées, dégradés subtils
+- **Typographie** : Police Montserrat, hiérarchie claire
+- **Layout** : Mobile-first (max-width: 500px), navigation bottom-bar
+
+### **Structure Interface**
+```
+HEADER (fixe)
+├── Logo "A" circulaire dégradé
+└── Texte "Athlética" avec dégradé
+
+MAIN (contenu principal)
+├── Carte exercice (pleine hauteur disponible)
+├── Système de swipe Tinder-like
+└── Feedback visuel immédiat
+
+FOOTER (navigation fixe)
+├── 🏋️ Sport
+├── 🍎 Nutrition  
+├── 📊 Stats
+└── 📅 Profil
+```
+
+## 🏋️ SECTION SPORT - Interface Tinder-like
+
+### **Programme d'Entraînement Modulaire**
+```javascript
+// Structure de base - remplaçable par fichier JSON externe
+const workoutProgram = {
+  'Lundi': { name: 'Cardio', type: 'cardio', exercises: [...] },
+  'Mardi': { name: 'Badminton', type: 'badminton', exercises: [...] },
+  // ... structure complète fournie dans le prompt original
+};
+```
+
+### **Fonctionnalités Swipe**
+- **Swipe droite** : ✓ Exercice terminé (feedback vert)
+- **Swipe gauche** : ✕ Exercice sauté (feedback rouge)  
+- **Animations** : Rotation et translation fluides
+- **Indicateurs visuels** : Overlays "Terminer"/"Passer" pendant le swipe
+
+### **Gestion Multi-Type d'Exercices**
+- **Musculation** : Saisie poids/répétitions, gestion séries, timer repos
+- **Cardio** : Durée et distance parcourue
+- **Badminton** : Confirmation simple Oui/Non
+- **Repos** : Message journée de récupération
+
+### **Chargement Programme Externe**
+```javascript
+// Fonctionnalité à implémenter
+function loadExternalWorkout(jsonFile) {
+  // Remplacer workoutProgram par données JSON externes
+  // Maintenir la même structure d'affichage
+}
+```
+
+## 🍎 SECTION NUTRITION
+
+### **Plan Alimentaire Structuré**
+- **6 repas/jour** : Petit-déjeuner, collation matin, déjeuner, goûter, dîner, collation soir
+- **Détails nutritionnels** : Protéines, calories, macros
+- **Objectifs** : 2500-2700 kcal, 115-160g protéines
+
+### **Système de Suivi**
+- Checklist interactive des repas pris
+- Sauvegarde automatique localStorage
+- Chargement plans alimentaires CSV
+
+```javascript
+// Fonctionnalité import CSV
+function loadNutritionCSV(csvFile) {
+  // Parser et afficher nouveau plan nutritionnel
+  // Format CSV : Repas,Protéines,Calories,Description
+}
+```
+
+## 📊 SECTION STATISTIQUES AVANCÉES
+
+### **Visualisations de Données**
+- **Graphique hydratation** : Barres verticales 7 jours
+- **Performance entraînement** : Graphiques circulaires (completion rate)
+- **Progression** : Nuages de points (évolution performance)
+- **Résumé détaillé** : Taux complétion, objectifs atteints
+
+### **Sélecteur Périodes**
+- Aujourd'hui, hier, 7 derniers jours, mois
+- Comparaisons période à période
+
+## 📅 SECTION PROFIL & HISTORIQUE
+
+### **Fonctionnalités Données**
+- **Historique complet** : Séances, nutrition, hydratation
+- **Export JSON** : Toutes données utilisateur
+- **Réinitialisation** : Nettoyage données avec confirmation
+
+## ⚙️ FONCTIONNALITÉS TECHNIQUES
+
+### **Architecture Technique**
+```
+Frontend Single Page Application
+├── HTML5 sémantique
+├── CSS3 avec variables CSS et glassmorphism
+├── JavaScript vanilla (ES6+)
+└── Stockage local (localStorage)
+```
+
+### **Performance & UX**
+- **Responsive** : Mobile-first, touch-friendly
+- **Offline-first** : Fonctionne sans connexion
+- **Animations** : 60fps, transitions fluides
+- **Feedback** : Immédiat pour toutes actions
+
+### **Gestion Données**
+```javascript
+// Structure de sauvegarde
+const fitnessData = {
+  workouts: { '2024-01-01': { day: 'Lundi', exercises: [...] } },
+  nutrition: { meals: [], customPlans: [] },
+  water: { '2024-01-01': 5 },
+  settings: { ... }
+};
+```
+
+## 🚀 SPÉCIFICATIONS D'IMPLÉMENTATION
+
+### **Requis Techniques**
+- **Fichier unique** : HTML, CSS, JS dans un seul fichier
+- **Compatibilité** : Navigeurs modernes (Chrome, Safari, Firefox mobile)
+- **Accessibilité** : Labels ARIA, contrastes suffisants
+- **Performance** : Chargement < 3s, interactions < 100ms
+
+### **Points d'Intégration Externe**
+1. **Entraînements** : Chargement JSON externe → même structure
+2. **Nutrition** : Import CSV → mapping colonnes prédéfini
+3. **Données** : Export JSON standardisé
+
+## 🎯 RÉSULTAT ATTENDU
+
+Une application web mobile-first, en français, avec :
+- ✅ Interface Tinder-like intuitive pour les exercices
+- ✅ Gestion complète entraînement/nutrition/progression  
+- ✅ Visualisations données avancées
+- ✅ Persistance données locale
+- ✅ Chargement fichiers externes (JSON/CSV)
+- ✅ Design glassmorphism noir & blanc élégant
+- ✅ Expérience fluide et engageante
+
+**Livrable** : Un fichier HTML autonome contenant l'application complète avec commentaires explicatifs.

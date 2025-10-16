@@ -1266,7 +1266,7 @@
         // Sélection automatique du jour ORIGINALE
         function autoSelectDay() {
             const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-            const today = new Date().getDay();
+            const today = new Date().getDay()+3;
             const todayName = days[today];
             
             selectDay(todayName);
