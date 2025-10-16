@@ -146,3 +146,52 @@ footer > div > div:hover {
     backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+#statistique main > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#statistique main > div:first-child p {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+#statistique main > div:first-child ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#statistique main > div:first-child ul li {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    color: black;
+}
+
+#statistique main > div:first-child ul li:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+#statistique main > div:first-child ul li.active {
+    background: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
