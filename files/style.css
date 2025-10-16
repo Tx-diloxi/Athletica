@@ -174,3 +174,62 @@ footer > div > div:hover {
     backdrop-filter: blur(2px);
     cursor: pointer;
 }
+
+/* Styles pour les sections côte à côte */
+#statistique main {
+    grid-area: main;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-template-areas: 
+        "header header"
+        "hydration exercises"
+        "progression progression";
+}
+
+#statistique main > div:first-child {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#statistique main > div:nth-child(2) {
+    grid-area: hydration;
+}
+
+#statistique main > div:nth-child(3) {
+    grid-area: exercises;
+}
+
+#statistique main > div:nth-child(4) {
+    grid-area: progression;
+    grid-column: 1 / -1;
+}
+
+/* Style des cartes */
+#statistique main > div:nth-child(2),
+#statistique main > div:nth-child(3),
+#statistique main > div:nth-child(4) {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#statistique main > div:nth-child(2) p,
+#statistique main > div:nth-child(3) p,
+#statistique main > div:nth-child(4) p {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
