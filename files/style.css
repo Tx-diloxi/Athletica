@@ -56,54 +56,6 @@ header > img:last-child {
     padding-right: 20px;
 }
 
-main {
-    grid-area: main;
-    padding: 20px;
-    padding-top: 60px;
-}
-
-main > div {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-main > div > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 32px;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
-}
-
-main > div > p{
-    position: absolute;
-    bottom: 75px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    color: black;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.);
-}
-
-main > div > p:last-child {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    color: black;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 footer {
     grid-area: footer;
     display: flex;
@@ -144,4 +96,53 @@ footer > div > div {
 footer > div > div:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
+}
+
+/* Styles spécifiques à la page index */
+#index main {
+    grid-area: main;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+#index main > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#index main > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+}
+
+#index main > div > p{
+    position: absolute;
+    bottom: 75px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.);
+}
+
+#index main > div > p:last-child {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
