@@ -50,7 +50,7 @@ header > div:first-child p:last-child {
     font-size: 20px;
     font-weight: bold;
     background: linear-gradient(to right, #000000, #ffffff);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Trade Winds', sans-serif;
 }
