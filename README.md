@@ -36,6 +36,7 @@ Athletica est une application web conçue pour les passionnés de sport, les ent
 Les contributions sont les bienvenues ! N’hésitez pas à ouvrir une issue ou à proposer une pull request.
 
 ##Aperçu 
+
 [Site](https://tx-diloxi.github.io/Athletica/)
 
 ## Licence
