@@ -217,7 +217,7 @@ footer > div > div:hover {
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px;
-    min-height: auto;
+    min-height: 245px;
     display: flex;
     justify-content: center;
 }
