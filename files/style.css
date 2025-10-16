@@ -166,6 +166,7 @@ footer > div > div:hover {
 
 #statistique main > div:first-child {
     grid-area: title;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
