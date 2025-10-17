@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition - Athlética</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+   
+</head>
+<body id="nutrition">
+    <header>
+        <div>
+            <p>A</p>
+            <p>Athlética</p>
+        </div>
+        <img src="./icone/notif.png" alt="Icone Notification" />
+    </header>
+
+    <main>
+        <div>
+            <p>Nutrition</p>
+            <select id="jourSelect">
+                <option value="1">Lundi</option>
+                <option value="2">Mardi</option>
+                <option value="3">Mercredi</option>
+                <option value="4">Jeudi</option>
+                <option value="5">Vendredi</option>
+                <option value="6">Samedi</option>
+                <option value="0">Dimanche</option>
+            </select>
+        </div>
+            
+        <div>
+            <div>
+                <p>Petit-déjeuner</p>
+                <p>320 kcal</p>
+            </div>
+            <div>
+                <p>Omelette aux légumes</p>
+                <div>
+                    <p>250 kcal</p>
+                </div>
+            </div>
+            <div>
+                <p>Jus d'orange</p>
+                <div>
+                    <p>70 kcal</p>
+                </div>
+            </div>
+            <button>+ Ajouter un aliment</button>
+        </div>
+
+        <div>
+            <div>
+                <p>Déjeuner</p>
+                <p>540 kcal</p>
+            </div>
+            <div>
+                <p>Poulet grillé</p>
+                <div>
+                    <p>320 kcal</p>
+                </div>
+            </div>
+            <div>
+                <p>Riz complet</p>
+                <div>
+                    <p>180 kcal</p>
+                </div>
+            </div>
+            <div>
+                <p>Salade verte</p>
+                <div>
+                    <p>40 kcal</p>
+                </div>
+            </div>
+            <button>+ Ajouter un aliment</button>
+        </div>
+
+        <div>
+            <div>
+                <p>Dîner</p>
+                <p>380 kcal</p>
+            </div>
+            <div>
+                <p>Poisson vapeur</p>
+                <div>
+                    <p>220 kcal</p>
+                </div>
+            </div>
+            <div>
+                <p>Légumes sautés</p>
+                <div>
+                    <p>160 kcal</p>
+                </div>
+            </div>
+            <button>+ Ajouter un aliment</button>
+        </div>
+
+        <div>
+            <div>
+                <p>Total nutritionnel</p>
+            </div>
+            <div>
+                <p>1240</p>
+                <p>kcal</p>
+            </div>
+            <div>
+                <p>85</p>
+                <p>protéines</p>
+            </div>
+            <div>
+                <p>145</p>
+                <p>glucides</p>
+            </div>
+            <div>
+                <p>32</p>
+                <p>lipides</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <p>Hydratation</p>
+                <p>1.5L / 2L</p>
+            </div>
+            <div>
+                <div style="width: 75%"></div>
+            </div>
+            <div>
+                <p>0L</p>
+                <p>2L</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <div>
+                <a href="../index.html"><img src="./icone/accuiel.png" alt="Accueil" /></a>
+            </div>
+            <div class="active">
+                <a href="./nutrition.html"><img src="./icone/nutrition.png" alt="Nutrition" /></a>
+            </div>
+            <div>
+                <a href="./statistique.html"><img src="./icone/statistique.png" alt="Statistique" /></a>
+            </div>
+            <div>
+                <a href="./profil.html"><img src="./icone/profil.png" alt="Profil" /></a>
+            </div>        
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jourSelect = document.getElementById('jourSelect');
+            const aujourdhui = new Date().getDay(); 
+            
+            jourSelect.value = aujourdhui.toString();
+        });
+    </script>
+</body>
+</html>
