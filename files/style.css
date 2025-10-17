@@ -140,7 +140,7 @@ footer > div > div:hover {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3 );
     color: black;
     padding: 8px 20px;
     border-radius: 20px;
