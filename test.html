@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Athlética</title>
+  <link rel="stylesheet" href="./files/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+</head>
+<body id="index">
+    <header>
+        <div>
+            <p>A</p>
+            <p>Athlética</p>
+        </div>
+        <img src="./files/icone/notif.png" alt="Icone Notification" />
+    </header>
+
+    <main>
+        <div id="swipeContainer">   
+            <!-- L'image et les informations seront chargées dynamiquement par JavaScript -->
+            <div class="exercise-card">
+                <img src="./files/img/sport/squat.png" alt="Exercice en cours" id="exerciseImage" />
+                <p id="exerciseInfo">Chargement de l'exercice...</p>
+                <p id="exerciseDetails"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <div>
+                <a href="./index.html"><img src="./files/icone/accuiel.png" alt="Accueil" /></a>
+            </div>
+            <div>
+                <a href="./files/nutrition.html"><img src="./files/icone/nutrition.png" alt="Nutrition" /></a>
+            </div>
+            <div>
+                <a href="./files/statistique.html"><img src="./files/icone/statistique.png" alt="Statistique" /></a>
+            </div>
+            <div>
+                <a href="./files/profil.html"><img src="./files/icone/profil.png" alt="Profil" /></a>
+            </div>        
+        </div>
+    </footer>
+
+    <script>
+    // Programme d'entraînement (identique à v12.html)
+    const workoutProgram = {
+        'Lundi': {
+            name: 'Cardio',
+            type: 'cardio',
+            exercises: [
+                { name: 'Course à pied', icon: '🏃', duration: '30-45 min', image: './files/img/sport/squat.png' }
+            ]
+        },
+        'Mardi': {
+            name: 'Badminton',
+            type: 'badminton',
+            exercises: [
+                { name: 'Badminton', icon: '🏸', duration: '1-2h', image: './files/img/sport/badminton.png' }
+            ]
+        },
+        'Mercredi': {
+            name: 'Cardio',
+            type: 'cardio',
+            exercises: [
+                { name: 'Course à pied', icon: '🏃', duration: '30-45 min', image: './files/img/sport/running.png' }
+            ]
+        },
+        'Jeudi': {
+            name: 'Repos',
+            type: 'rest',
+            exercises: []
+        },
+        'Vendredi': {
+            name: 'Pecs/Épaules/Triceps',
+            type: 'muscu',
+            warmup: 'échauffement rameur ou vélo',
+            exercises: [
+                { name: 'Développé couché', icon: '🏋️', sets: 3, reps: '8-12', rest: '1-2 min', image: './files/img/sport/bench-press.png' },
+                { name: 'Développé militaire', icon: '💪', sets: 3, reps: '8-12', rest: '1 min', image: './files/img/sport/shoulder-press.png' },
+                { name: 'Élévations latérales', icon: '🦅', sets: 3, reps: '10-12', rest: '75 sec', image: './files/img/sport/lateral-raise.png' },
+                { name: 'Dips', icon: '🤸', sets: 3, reps: '10', rest: '1 min', image: './files/img/sport/dips.png' },
+                { name: 'Extension triceps', icon: '💥', sets: 3, reps: '10-12', rest: '75 sec', image: './files/img/sport/triceps.png' }
+            ]
+        },
+        'Samedi': {
+            name: 'Dos/Biceps',
+            type: 'muscu',
+            warmup: 'échauffement rameur',
+            exercises: [
+                { name: 'Tractions/Tirage vertical', icon: '🎯', sets: 3, reps: '8-12', rest: '1-2 min', image: './files/img/sport/pull-up.png' },
+                { name: 'Rowing', icon: '🚣', sets: 3, reps: '8-12', rest: '1-2 min', image: './files/img/sport/rowing.png' },
+                { name: 'Tirage assis', icon: '⚡', sets: 3, reps: '10', rest: '1 min', image: './files/img/sport/seated-row.png' },
+                { name: 'Curl barre', icon: '💪', sets: 3, reps: '10-12', rest: '1 min', image: './files/img/sport/bicep-curl.png' },
+                { name: 'Curl marteau', icon: '🔨', sets: 2, reps: '10-12', rest: '75 sec', image: './files/img/sport/hammer-curl.png' }
+            ]
+        },
+        'Dimanche': {
+            name: 'Jambes/Abdominaux',
+            type: 'muscu',
+            warmup: 'échauffement vélo',
+            exercises: [
+                { name: 'Squat/Presse', icon: '🦵', sets: 3, reps: '8-12', rest: '1-2 min', image: './files/img/sport/squat.png' },
+                { name: 'Fentes', icon: '🏃', sets: 3, reps: '10', rest: '75-90 sec', image: './files/img/sport/lunges.png' },
+                { name: 'Leg curl', icon: '🦿', sets: 3, reps: '10', rest: '1 min', image: './files/img/sport/leg-curl.png' },
+                { name: 'Mollets debout', icon: '👟', sets: 4, reps: '12-15', rest: '1 min', image: './files/img/sport/calf-raise.png' },
+                { name: 'Crunchs', icon: '📐', sets: 3, reps: '15', rest: '30 sec', image: './files/img/sport/crunch.png' },
+                { name: 'Gainage', icon: '🧘', sets: 3, reps: '30-45 sec', rest: '30 sec', image: './files/img/sport/plank.png' }
+            ]
+        }
+    };
+
+    // Variables globales
+    let currentDay = '';
+    let currentExerciseIndex = 0;
+    let currentSeriesIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isSwiping = false;
+    let swipeEnabled = true; // Nouvelle variable pour contrôler le swipe
+
+    // Initialisation
+    function init() {
+        autoSelectDay();
+        setupSwipeHandlers();
+    }
+
+    // Sélection automatique du jour
+    function autoSelectDay() {
+        const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        const today = new Date().getDay();
+        const todayName = days[today];
+        selectDay(todayName);
+    }
+
+    function selectDay(day) {
+        currentDay = day;
+        currentExerciseIndex = 0;
+        currentSeriesIndex = 0;
+        swipeEnabled = true; // Réactiver le swipe quand on change de jour
+        displayCurrentExercise();
+    }
+
+    // Affichage de l'exercice courant
+    function displayCurrentExercise() {
+        const workout = workoutProgram[currentDay];
+        
+        if (!workout || workout.type === 'rest') {
+            document.getElementById('exerciseImage').src = './files/img/sport/rest.png';
+            document.getElementById('exerciseInfo').textContent = 'Jour de repos';
+            document.getElementById('exerciseDetails').textContent = 'Profitez de votre récupération!';
+            disableSwipe(); // Désactiver le swipe pour le repos
+            return;
+        }
+
+        const exercises = workout.exercises;
+        
+        if (currentExerciseIndex >= exercises.length) {
+            document.getElementById('exerciseImage').src = './files/img/sport/completed.png';
+            document.getElementById('exerciseInfo').textContent = 'Séance terminée!';
+            document.getElementById('exerciseDetails').textContent = 'Bravo! Pensez à vous hydrater.';
+            disableSwipe(); // Désactiver le swipe après la séance
+            return;
+        }
+
+        const exercise = exercises[currentExerciseIndex];
+        
+        // Mettre à jour l'image
+        document.getElementById('exerciseImage').src = exercise.image || './files/img/sport/default.png';
+        
+        // Mettre à jour les informations d'exercice
+        if (workout.type === 'muscu') {
+            const totalSets = exercise.sets;
+            const currentSet = currentSeriesIndex + 1;
+            document.getElementById('exerciseInfo').textContent = `${exercise.name} - Série ${currentSet}/${totalSets}`;
+            document.getElementById('exerciseDetails').textContent = `Reps: ${exercise.reps}`;
+        } else {
+            document.getElementById('exerciseInfo').textContent = exercise.name;
+            document.getElementById('exerciseDetails').textContent = `Durée: ${exercise.duration}`;
+        }
+        
+        enableSwipe(); // Réactiver le swipe pour les exercices normaux
+    }
+
+    // Contrôle du swipe
+    function enableSwipe() {
+        swipeEnabled = true;
+        document.querySelector('.exercise-card').style.cursor = 'grab';
+    }
+
+    function disableSwipe() {
+        swipeEnabled = false;
+        document.querySelector('.exercise-card').style.cursor = 'default';
+    }
+
+    // Gestion du swipe
+    function setupSwipeHandlers() {
+        const container = document.getElementById('swipeContainer');
+        
+        container.addEventListener('touchstart', handleTouchStart, { passive: false });
+        container.addEventListener('touchmove', handleTouchMove, { passive: false });
+        container.addEventListener('touchend', handleTouchEnd);
+        
+        container.addEventListener('mousedown', handleMouseDown);
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('mouseup', handleMouseUp);
+        container.addEventListener('mouseleave', handleMouseUp);
+    }
+
+    function handleTouchStart(e) {
+        if (!swipeEnabled) return;
+        startX = e.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+        e.preventDefault();
+    }
+
+    function handleTouchMove(e) {
+        if (!swipeEnabled || !isSwiping) return;
+        
+        if (e.touches.length === 1) {
+            currentX = e.touches[0].clientX;
+            updateCardPosition();
+            e.preventDefault();
+        }
+    }
+
+    function handleTouchEnd() {
+        if (!swipeEnabled || !isSwiping) return;
+        
+        handleSwipeEnd();
+        isSwiping = false;
+    }
+
+    function handleMouseDown(e) {
+        if (!swipeEnabled) return;
+        startX = e.clientX;
+        currentX = startX;
+        isSwiping = true;
+        e.preventDefault();
+    }
+
+    function handleMouseMove(e) {
+        if (!swipeEnabled || !isSwiping) return;
+        
+        currentX = e.clientX;
+        updateCardPosition();
+        e.preventDefault();
+    }
+
+    function handleMouseUp() {
+        if (!swipeEnabled || !isSwiping) return;
+        
+        handleSwipeEnd();
+        isSwiping = false;
+    }
+
+    function updateCardPosition() {
+        const card = document.querySelector('.exercise-card');
+        if (!card) return;
+        
+        const deltaX = currentX - startX;
+        const rotation = deltaX * 0.1;
+        
+        card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
+        card.style.transition = 'none';
+        
+        // Feedback visuel
+        if (deltaX > 50) {
+            card.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+        } else if (deltaX < -50) {
+            card.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+        } else {
+            card.style.backgroundColor = '';
+        }
+    }
+
+    function handleSwipeEnd() {
+        const card = document.querySelector('.exercise-card');
+        if (!card) return;
+        
+        const deltaX = currentX - startX;
+        const swipeThreshold = 100;
+        
+        card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        
+        if (Math.abs(deltaX) > swipeThreshold) {
+            card.style.transform = deltaX > 0 ? 
+                'translateX(150%) rotate(20deg)' : 
+                'translateX(-150%) rotate(-20deg)';
+            card.style.opacity = '0';
+            
+            setTimeout(() => {
+                if (deltaX > 0) {
+                    completeCurrentAction();
+                } else {
+                    skipCurrentAction();
+                }
+                // Réinitialiser la carte
+                card.style.transform = 'translateX(0) rotate(0deg)';
+                card.style.opacity = '1';
+                card.style.backgroundColor = '';
+            }, 300);
+        } else {
+            card.style.transform = 'translateX(0) rotate(0deg)';
+            card.style.backgroundColor = '';
+        }
+    }
+
+    function completeCurrentAction() {
+        const workout = workoutProgram[currentDay];
+        
+        if (workout.type === 'muscu') {
+            completeSeries();
+        } else if (workout.type === 'cardio' || workout.type === 'badminton') {
+            completeExercise();
+        }
+    }
+
+    function skipCurrentAction() {
+        const workout = workoutProgram[currentDay];
+        
+        if (workout.type === 'muscu') {
+            skipSeries();
+        } else if (workout.type === 'cardio' || workout.type === 'badminton') {
+            skipExercise();
+        }
+    }
+
+    function completeSeries() {
+        const exercise = workoutProgram[currentDay].exercises[currentExerciseIndex];
+        currentSeriesIndex++;
+        
+        if (currentSeriesIndex >= exercise.sets) {
+            currentSeriesIndex = 0;
+            currentExerciseIndex++;
+        }
+        
+        displayCurrentExercise();
+    }
+
+    function skipSeries() {
+        const exercise = workoutProgram[currentDay].exercises[currentExerciseIndex];
+        currentSeriesIndex++;
+        
+        if (currentSeriesIndex >= exercise.sets) {
+            currentSeriesIndex = 0;
+            currentExerciseIndex++;
+        }
+        
+        displayCurrentExercise();
+    }
+
+    function completeExercise() {
+        currentExerciseIndex++;
+        displayCurrentExercise();
+    }
+
+    function skipExercise() {
+        currentExerciseIndex++;
+        displayCurrentExercise();
+    }
+
+    // Initialisation au chargement
+    window.onload = init;
+</script>
+</body>
+</html>
